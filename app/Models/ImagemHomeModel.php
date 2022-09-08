@@ -63,16 +63,9 @@ class ImagemHomeModel extends Model
    /*funcao getbyid*/
    public function GetById($id)
    {
-      $dados =     DB::select("select * from imagens_home
+      return     DB::select("select * from imagens_home
               Where id = ?",
               [$id]);
-          if(count($dados)>0){
-              $this->pos_y = $dados[0]['pos_y'];
-              $this->pos_x = $dados[0]['pos_x'];
-              $this->ordenacao = $dados[0]['ordenacao'];
-              $this->url = $dados[0]['url'];
-              $this->id = $dados[0]['id'];
-          }
    }
 
 

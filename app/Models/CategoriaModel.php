@@ -62,15 +62,9 @@ class CategoriaModel extends Model
    /*funcao getbyid*/
    public function GetById($id)
    {
-      $dados =     DB::select("select * from Categorias
+      return    DB::select("select * from Categorias
               Where id = ?",
               [$id]);
-          if(count($dados)>0){
-              $this->peso = $dados[0]['peso'];
-              $this->icon = $dados[0]['icon'];
-              $this->descricao = $dados[0]['descricao'];
-              $this->id = $dados[0]['id'];
-          }
    }
 
   public function ToArray()

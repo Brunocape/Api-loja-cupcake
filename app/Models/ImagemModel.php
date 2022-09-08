@@ -59,14 +59,9 @@ class ImagemModel extends Model
    /*funcao getbyid*/
    public function GetById($id)
    {
-      $dados =     DB::select("select * from imagens
+    return   DB::select("select * from imagens
               Where id = ?",
               [$id]);
-          if(count($dados)>0){
-              $this->item_id = $dados[0]['item_id'];
-              $this->path = $dados[0]['path'];
-              $this->id = $dados[0]['id'];
-          }
    }
 
   public function ToArray()
