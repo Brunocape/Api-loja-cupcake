@@ -66,9 +66,12 @@ class ItemModel extends Model
    /*funcao getbyid*/
    public function GetById($id)
    {
-      return     DB::select("select * from Itens
+    $item = DB::select("select * from Itens
               Where id = ?",
               [$id]);
+      $imagem = new ImagemModel();
+      $item[0]->imagens = $imagem->GetByItemId($item[0]->id);
+      return $item[0];        
    }
 
   public function ToArray()

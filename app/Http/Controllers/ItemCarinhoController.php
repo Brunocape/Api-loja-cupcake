@@ -142,6 +142,7 @@ class ItemCarinhoController extends Controller
             return response()->json($retorno, 413); 
         }
     }
+    
 public function BuscarPorId(Request $request)
 {
     $ItemCarinhoModel = new ItemCarinhoModel();  
