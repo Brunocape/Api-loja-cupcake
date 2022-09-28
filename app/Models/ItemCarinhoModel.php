@@ -40,10 +40,9 @@ class ItemCarinhoModel extends Model
    public function Atualizar()
    {
           DB::update("update itens_carinho set 
-                    dt_alteracao = {$this->dt_alteracao},
                     qtde = {$this->qtde},
                     usuario_id = {$this->usuario_id},
-                    item_id = {$this->item_id},
+                    item_id = {$this->item_id}
                      where 
                     id = ?"
                     ,[
@@ -54,7 +53,7 @@ class ItemCarinhoModel extends Model
    /*funcao Apagar*/
    public function Apagar()
    {
-          DB::Delete('delete from usuarios
+          DB::Delete('delete from itens_carinho
                      where 
                     id = ?'
                     ,[
@@ -82,11 +81,11 @@ class ItemCarinhoModel extends Model
               Where id = ?",
               [$id]);
           if(count($dados)>0){
-              $this->id = $dados[0]['id'];
-              $this->dt_alteracao = $dados[0]['dt_alteracao'];
-              $this->qtde = $dados[0]['qtde'];
-              $this->usuario_id = $dados[0]['usuario_id'];
-              $this->item_id = $dados[0]['item_id'];
+              $this->id = $dados[0]->id;
+              $this->dt_alteracao = $dados[0]->dt_alteracao;
+              $this->qtde = $dados[0]->qtde;
+              $this->usuario_id = $dados[0]->usuario_id;
+              $this->item_id = $dados[0]->item_id;
           }
    }
 
@@ -94,7 +93,6 @@ class ItemCarinhoModel extends Model
     {
         $retorno = [
                       'id' => $this->id,
-                      'dt_alteracao' => $this->dt_alteracao,
                       'qtde' => $this->qtde,
                       'usuario_id' => $this->usuario_id,
                       'item_id' => $this->item_id,
@@ -108,7 +106,7 @@ class ItemCarinhoModel extends Model
    /*funcao fromRequest*/
     public function FromRequest(Request $request)
     {
-       if ($request->idItemCarinho != null || $request->idItemCarinho != "") {
+       if ($request->idItemCarinho != null || $request->c != "") {
             $this->id = $request->idItemCarinho;
         }
              $this->qtde = $request->qtdeItemCarinho;

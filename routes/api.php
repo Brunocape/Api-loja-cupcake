@@ -27,8 +27,10 @@ Route::post('/usuario/EnviarEmail',[UsuarioController::class,'EnviarEmail']);
 Route::post('/usuario/AlterarSenha',[UsuarioController::class,'AlterarSenha']);
 Route::post('/usuario/AtivarUsuario',[UsuarioController::class,'AtivarUsuario']);
 
-Route::post('/ItemCarinho/buscarPorUserId',[ItemCarinhoController::class,'buscarPorUserId']);
-
+Route::post('/ItemCarinho/buscarPorUserId',[ItemCarinhoController::class,'BuscarPorUserId']);
+Route::post('/ItemCarinho/cadastrar',[ItemCarinhoController::class,'Cadastrar']);
+Route::post('/ItemCarinho/apagar',[ItemCarinhoController::class,'Apagar']);
+Route::post('/ItemCarinho/atualizar',[ItemCarinhoController::class,'Atualizar']);
 
 
 Route::post('/imageHome/cadastrar',[ImagemHomeController::class,'Cadastrar']);

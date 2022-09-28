@@ -81,8 +81,8 @@ class ItemCarinhoController extends Controller
 
         try {
 
-            $$ItemCarinhoModel->FromRequest($request);
-            $usuarioModel->Atualizar();
+            $ItemCarinhoModel->FromRequest($request);
+            $ItemCarinhoModel->Atualizar();
             $retorno = [
                 'status' => 'Ok',
                 'mensagem' => 'Atualizado com sucesso',
@@ -123,7 +123,7 @@ class ItemCarinhoController extends Controller
 
     //*********************************************** */
 
-    public function buscarPorUserId(Request $request)
+    public function BuscarPorUserId(Request $request)
     {
         $ItemCarinhoModel = new ItemCarinhoModel();  
         try {
