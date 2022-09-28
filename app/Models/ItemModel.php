@@ -66,16 +66,9 @@ class ItemModel extends Model
    /*funcao getbyid*/
    public function GetById($id)
    {
-      $dados =     DB::select("select * from Itens
+      return     DB::select("select * from Itens
               Where id = ?",
               [$id]);
-          if(count($dados)>0){
-              $this->categoria_id = $dados[0]['categoria_id'];
-              $this->tipo = $dados[0]['tipo'];
-              $this->perco = $dados[0]['perco'];
-              $this->descricao = $dados[0]['descricao'];
-              $this->id = $dados[0]['id'];
-          }
    }
 
   public function ToArray()

@@ -191,11 +191,16 @@ public function BuscarPorId(Request $request)
     
     try {
 
-        $usuarioModel->GetById($request->idUsuario);
+        $usuario = $usuarioModel->GetById($request->idUsuario);
+        if(count($usuario)==0){
+            throw new Exception("Usuario não localizado no banco de dados", 1);
+            
+        }
+
         $retorno = [
             'status' => 'Ok',
-            'mensagem' => 'Cadastrado com sucesso',
-            'dados' => $usuarioModel->ToArray(),
+            'mensagem' => 'Consulta realizada com sucesso!',
+            'dados' => $usuario,
         ];
         return response()->json($retorno, 200); 
 

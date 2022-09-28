@@ -95,21 +95,11 @@ class UsuarioModel extends Model
     /*funcao getbyid*/
     public function GetById($id)
     {
-        $dados =     DB::select(
+        return     DB::select(
             "SELECT * FROM `usuarios` WHERE id = ?  LIMIT 1 ",
             [$id]
         );
-        if (count($dados) > 0) {
-            $this->id = $dados[0]->id;
-            $this->nome = $dados[0]->nome;
-            $this->email = $dados[0]->email;
-            $this->senha = $dados[0]->senha;
-            $this->ativo = $dados[0]->ativo;
-            $this->token = $dados[0]->token;
-            $this->codigo_valid = $dados[0]->codigo_valid;
-            $this->dt_criacao = $dados[0]->dt_criacao;
-            $this->dt_alteracao = $dados[0]->dt_alteracao;
-        }
+
     }
   //*********************************** */
     public function GetByEmail($email)

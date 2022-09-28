@@ -7,6 +7,7 @@ use App\Http\Controllers\ImagemHomeController;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\ImagemController;
+use App\Http\Controllers\ItemCarinhoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +26,8 @@ Route::post('/usuario/BuscarPorId',[UsuarioController::class,'BuscarPorId']);
 Route::post('/usuario/EnviarEmail',[UsuarioController::class,'EnviarEmail']);
 Route::post('/usuario/AlterarSenha',[UsuarioController::class,'AlterarSenha']);
 Route::post('/usuario/AtivarUsuario',[UsuarioController::class,'AtivarUsuario']);
+
+Route::post('/ItemCarinho/buscarPorUserId',[ItemCarinhoController::class,'buscarPorUserId']);
 
 
 
