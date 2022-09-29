@@ -8,6 +8,8 @@ use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\ImagemController;
 use App\Http\Controllers\ItemCarinhoController;
+use App\Http\Controllers\CupomController;
+use App\Http\Controllers\PedidoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +33,14 @@ Route::post('/ItemCarinho/buscarPorUserId',[ItemCarinhoController::class,'Buscar
 Route::post('/ItemCarinho/cadastrar',[ItemCarinhoController::class,'Cadastrar']);
 Route::post('/ItemCarinho/apagar',[ItemCarinhoController::class,'Apagar']);
 Route::post('/ItemCarinho/atualizar',[ItemCarinhoController::class,'Atualizar']);
+
+Route::post('/Pedido/buscarPorClienteId',[PedidoController::class,'BuscarPorClienteId']);
+Route::post('/Pedido/cadastrar',[PedidoController::class,'Cadastrar']);
+
+Route::post('/Cupom/cadastrar',[CupomController::class,'Cadastrar']);
+Route::post('/Cupom/apagar',[CupomController::class,'Apagar']);
+Route::post('/Cupom/atualizar',[ItemCarinhoCCupomControllerontroller::class,'Atualizar']);
+Route::post('/Cupom/buscarPorDesc',[CupomController::class,'BuscarPorDesc']);
 
 
 Route::post('/imageHome/cadastrar',[ImagemHomeController::class,'Cadastrar']);
