@@ -11,6 +11,14 @@
     <br>
     <h1>{{$codigo}}</h1>
     <br>
+    @if($cupom != "")
+
+    <h4>Use o cupom abaixo para obter 10% de desconto na primeira compra.</h4>
+    <br>
+    <h1>{{$cupom}}</h1>
+    <br>
+
+    @endif
     <h5>não responda este email.</h5>
 </body>
 </html>

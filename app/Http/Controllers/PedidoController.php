@@ -130,6 +130,7 @@ class PedidoController extends Controller
         }
     }
 
+
     public function buscarTodos()
     {
         $PedidoModel = new PedidoModel();  

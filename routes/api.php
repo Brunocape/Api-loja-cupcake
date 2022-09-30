@@ -34,13 +34,14 @@ Route::post('/ItemCarinho/cadastrar',[ItemCarinhoController::class,'Cadastrar'])
 Route::post('/ItemCarinho/apagar',[ItemCarinhoController::class,'Apagar']);
 Route::post('/ItemCarinho/atualizar',[ItemCarinhoController::class,'Atualizar']);
 
-Route::post('/Pedido/buscarPorClienteId',[PedidoController::class,'BuscarPorClienteId']);
-Route::post('/Pedido/cadastrar',[PedidoController::class,'Cadastrar']);
+Route::post('/pedido/buscarPorClienteId',[PedidoController::class,'BuscarPorClienteId']);
+Route::post('/pedido/cadastrar',[PedidoController::class,'Cadastrar']);
 
-Route::post('/Cupom/cadastrar',[CupomController::class,'Cadastrar']);
-Route::post('/Cupom/apagar',[CupomController::class,'Apagar']);
-Route::post('/Cupom/atualizar',[ItemCarinhoCCupomControllerontroller::class,'Atualizar']);
-Route::post('/Cupom/buscarPorDesc',[CupomController::class,'BuscarPorDesc']);
+
+Route::post('/cupom/cadastrar',[CupomController::class,'Cadastrar']);
+Route::post('/cupom/apagar',[CupomController::class,'Apagar']);
+Route::post('/cupom/atualizar',[ItemCarinhoCCupomControllerontroller::class,'Atualizar']);
+Route::post('/cupom/buscarPorDesc',[CupomController::class,'BuscarPorDesc']);
 
 
 Route::post('/imageHome/cadastrar',[ImagemHomeController::class,'Cadastrar']);

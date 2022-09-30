@@ -159,7 +159,7 @@ public function BuscarPorDesc(Request $request)
         }else{
             $retorno = [
                 'status' => 'Ok',
-                'mensagem' => 'Consulta realizada com sucesso',
+                'mensagem' => 'Cupom de '.$dados[0]->percentual . "% encotrado",
                 'dados' => $dados[0],
             ];
             return response()->json($retorno, 200); 

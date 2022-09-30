@@ -163,6 +163,8 @@ class PedidoModel extends Model
    {
       return  DB::select("select * from pedidos");
    }
+
+
 }
 
 

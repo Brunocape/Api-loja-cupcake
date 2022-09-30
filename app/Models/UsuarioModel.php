@@ -41,7 +41,12 @@ class UsuarioModel extends Model
     public function SendEmail()
     {
         $this->codigo_valid = rand(100000,999999);
-        Mail::to([$this->email])->send(new SendCodigoMail($this->codigo_valid));
+        $cupom = Str::random(5)."10off";
+        $CupomModel = new CupomModel();
+        $CupomModel->descricao = $cupom;
+        $CupomModel->percentual = 10;
+        $CupomModel->Salvar();
+        Mail::to([$this->email])->send(new SendCodigoMail($this->codigo_valid, $cupom));
     }
   //*********************************** */
     /*funcao Save*/
@@ -55,6 +60,7 @@ class UsuarioModel extends Model
                 'email' => $this->email,
                 'senha' => $this->senha,
                 'token' => $this->token,
+                'ativo' => 0,
                 'codigo_valid' => $this->codigo_valid
             ]
         );        
@@ -152,7 +158,7 @@ class UsuarioModel extends Model
         }    
 
         if ($user[0]->ativo == 0) {
-            Mail::to([$user[0]->email])->send(new SendCodigoMail($user[0]->codigo_valid));
+            Mail::to([$user[0]->email])->send(new SendCodigoMail($user[0]->codigo_valid,""));
             throw new Exception("Este usuario não esta ativo");
         } 
 

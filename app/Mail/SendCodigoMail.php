@@ -17,9 +17,11 @@ class SendCodigoMail extends Mailable
      * @return void
      */
     public $codigo;
-    public function __construct($codigo)
+    public $cupom;
+    public function __construct($codigo, $cupom)
     {
         $this->codigo = $codigo;
+        $this->cupom = $cupom;
     }
 
     /**
@@ -31,6 +33,7 @@ class SendCodigoMail extends Mailable
     {
         return $this->view('codigoMail')->with([
             'codigo' => $this->codigo, 
+            'cupom' => $this->cupom
             ]);
     }
 }
